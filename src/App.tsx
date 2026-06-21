@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import { Accordion } from './components/Accordion';
 function StarRating({ count = 5, value = 0, onChange, size = 28 }) {
   const [hover, setHover] = useState(0)
   const active = hover || value;
@@ -28,6 +26,7 @@ function StarRating({ count = 5, value = 0, onChange, size = 28 }) {
    </div>
   )
 }
+
 function App() {
   const [rating,setRating] = useState(0)
 
@@ -36,7 +35,8 @@ function App() {
       <div style={{ padding: 24 }}>
       <StarRating value={rating} onChange={setRating} />
       <p>Selected: {rating}</p>
-    </div>
+      </div>
+      <Accordion/>
     </>
   )
 }
